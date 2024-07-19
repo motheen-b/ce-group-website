@@ -2,13 +2,16 @@
   <div class="app">
     <div class="main-container">
       <Header />
-      <!-- <component :is="showActivateComponent()" /> -->
+      <NavBar />
+      <component :is="showActiveComponent()" />
     </div>
   </div>
 </template>
 
 <script>
 import Header from './components/Header.vue'
+import NavBar from './components/NavBar.vue'
+import Home from './components/Home.vue'
 
 export default {
   data() {
@@ -17,10 +20,12 @@ export default {
     }
   },
   components: {
-    Header
+    Header,
+    NavBar,
+    Home
   },
   methods: {
-    showActivateComponent() {
+    showActiveComponent() {
       const components = {
         'home': Home
       }
